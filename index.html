@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Document</title>
+</head>
+  <body>
+
+
+  <!--Top Section-->
+    <div class="tic">
+      <h2 class="gametitle">Tic-Tac-Toe</h2>
+    </div>
+    <div class="buttons">
+      <button id="start" type="button">Start</button>
+      <button id="previous" type="button">Previous</button>
+      <button id="next" type="button">Next</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <div class="main">
+
+
+  <!--Left Side Player Select-->
+      <div class="player1">
+        <form class="p1form">
+        <h2>Player 1</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="p1name" required onsubmit="return false">
+        <h2 class="player1name"></h2>
+        </br>
+        <label for="player1signX">X</label>
+        <input type="radio" class="player1signX" name="player1sign" value="X">
+        </br>
+        <label for="player1signO">O</label>
+        <input type="radio" class="player1signO" name="player1sign" value="O">
+        <h2 class="p1signselect"></h2>
+      </form>
+      </div>
+      
+  <!--Main Game Board-->
+      <div class="board">
+        <div class="cells cell1"><h2 class="content1 content"></h2></div>
+        <div class="cells cell2"><h2 class="content2 content"></h2></div>
+        <div class="cells cell3"><h2 class="content3 content"></h2></div>
+        <div class="cells cell4"><h2 class="content4 content"></h2></div>
+        <div class="cells cell5"><h2 class="content5 content"></h2></div>
+        <div class="cells cell6"><h2 class="content6 content"></h2></div>
+        <div class="cells cell7"><h2 class="content7 content"></h2></div>
+        <div class="cells cell8"><h2 class="content8 content"></h2></div>
+        <div class="cells cell9"><h2 class="content9 content"></h2></div>
+      </div>
+
+  <!--Right Side Player Select-->
+      <div class="player2">
+        <form class="p2form">
+        <h2>Player 2</h2>
+        <label for="name2">Name:</label>
+        <input type="text" id="p2name" onsubmit="return false" required>
+        <h2 class="player2name"></h2>
+        </br>
+        <label for="player2signX">X</label>
+        <input type="radio" class="player2signX" id="player2signX" name="player2sign" value="X">
+        </br>
+        <label for="player2signO">O</label>
+        <input type="radio" class="player2signO" id="player2signO" name="player2sign" value="O">
+        <h2 class="p2signselect"></h2>
+      </form>
+      </div>
+    </div>
+    <h2 class="currturn"></h2>
+    <script src="/js/getplayerdetails.js" defer></script>
+  </body>
+</html>
