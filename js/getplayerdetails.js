@@ -35,6 +35,7 @@ function getp1signselectX() {
   }
   p2signX.disabled = true;
   p2signO.disabled = false;
+  p1signsel.value = input
 }
 
 p1signX.addEventListener("change", getp1signselectX);
@@ -48,6 +49,7 @@ function getp1signselectO() {
   }
   p2signO.disabled = true;
   p2signX.disabled = false;
+  p1signsel.value = input
 }
 
 p1signO.addEventListener("change", getp1signselectO);
@@ -86,6 +88,7 @@ function getp2signselectX() {
   }
   p1signX.disabled = true;
   p1signO.disabled = false;
+  p2signsel.value = input
 }
 
 p2signX.addEventListener("change", getp2signselectX);
@@ -99,6 +102,7 @@ function getp2signselectO() {
   }
   p1signX.disabled = false;
   p1signO.disabled = true;
+  p2signsel.value = input
 }
 
 p2signO.addEventListener("change", getp2signselectO);

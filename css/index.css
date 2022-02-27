@@ -13,6 +13,10 @@ body{
   text-align: center;
 }
 
+.gametitle{
+  font-size: 40px;
+}
+
 .buttons{
   padding-top: 2vh;
   display: flex;
@@ -95,4 +99,9 @@ button:hover{
 
 .content{
   margin-top: 50px;
+}
+
+.currturn{
+  text-align: center;
+  padding-top: 10px;
 }
