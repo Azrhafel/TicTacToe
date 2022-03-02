@@ -214,6 +214,15 @@ cell9.addEventListener("click", cell9move);
 //Board Reset
 function boardReset() {
   move = 1;
+  cell1.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell2.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell3.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell4.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell5.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell6.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell7.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell8.style.backgroundColor = "rgba(255,255,255,0.2)"
+  cell9.style.backgroundColor = "rgba(255,255,255,0.2)"
   mainboard.style.backgroundColor = "rgba(255,255,255,0.2)"
   mainboard.style.backgroundImage = "none"
   cellcont1.textContent = "";
@@ -260,12 +269,18 @@ function checkForWinner1() {
     startingBoard[2] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell2.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell3.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[0] === p2signsel.value &&
     startingBoard[1] === p2signsel.value &&
     startingBoard[2] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell2.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell3.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -276,12 +291,18 @@ function checkForWinner2() {
     startingBoard[5] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell4.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell5.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell6.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[3] === p2signsel.value &&
     startingBoard[4] === p2signsel.value &&
     startingBoard[5] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell4.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell5.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell6.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -292,12 +313,18 @@ function checkForWinner3() {
     startingBoard[8] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell7.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell8.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell9.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[6] === p2signsel.value &&
     startingBoard[7] === p2signsel.value &&
     startingBoard[8] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell7.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell8.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell9.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -308,12 +335,18 @@ function checkForWinner4() {
     startingBoard[6] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell4.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell7.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[0] === p2signsel.value &&
     startingBoard[3] === p2signsel.value &&
     startingBoard[6] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell4.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell7.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -324,12 +357,18 @@ function checkForWinner5() {
     startingBoard[7] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell2.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell5.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell8.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[1] === p2signsel.value &&
     startingBoard[4] === p2signsel.value &&
     startingBoard[7] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell2.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell5.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell8.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -340,12 +379,18 @@ function checkForWinner6() {
     startingBoard[8] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell3.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell6.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell9.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[2] === p2signsel.value &&
     startingBoard[5] === p2signsel.value &&
     startingBoard[8] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell3.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell6.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell9.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -356,12 +401,18 @@ function checkForWinner7() {
     startingBoard[6] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell3.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell5.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell7.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[2] === p2signsel.value &&
     startingBoard[4] === p2signsel.value &&
     startingBoard[6] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell3.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell5.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell7.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
@@ -372,12 +423,18 @@ function checkForWinner8() {
     startingBoard[8] === p1signsel.value
   ) {
     Title.textContent = `${p1lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell5.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
+    cell9.style.backgroundColor = "rgba(74, 252, 95, 0.54)"
   } else if (
     startingBoard[0] === p2signsel.value &&
     startingBoard[4] === p2signsel.value &&
     startingBoard[8] === p2signsel.value
   ) {
     Title.textContent = `${p2lock.innerHTML} wins!`;
+    cell1.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell5.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
+    cell9.style.backgroundColor = "rgba(232, 34, 57, 0.54)"
   }
 }
 
