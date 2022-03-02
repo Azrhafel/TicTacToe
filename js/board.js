@@ -235,7 +235,7 @@ function boardReset() {
   cell8.removeEventListener("click", cell8move);
   cell9.removeEventListener("click", cell9move);
 }
-boardReset()
+boardReset();
 
 //Check for Winner Codes
 
@@ -394,6 +394,8 @@ function checkForWinner() {
     (move === 10 && Title.textContent !== `${p2lock.innerHTML} wins!`)
   ) {
     Title.textContent = "Draw!";
+    mainboard.style.backgroundImage =
+      "url('https://c.tenor.com/RUwFv2LxW_QAAAAM/the-wire-surprised.gif')";
   }
 }
 
@@ -424,4 +426,16 @@ function activateBoard() {
   cell7.addEventListener("click", cell7move);
   cell8.addEventListener("click", cell8move);
   cell9.addEventListener("click", cell9move);
+}
+
+function noNameNoSignNoStart() {
+  cell1.removeEventListener("click", cell1move);
+  cell2.removeEventListener("click", cell2move);
+  cell3.removeEventListener("click", cell3move);
+  cell4.removeEventListener("click", cell4move);
+  cell5.removeEventListener("click", cell5move);
+  cell6.removeEventListener("click", cell6move);
+  cell7.removeEventListener("click", cell7move);
+  cell8.removeEventListener("click", cell8move);
+  cell9.removeEventListener("click", cell9move);
 }

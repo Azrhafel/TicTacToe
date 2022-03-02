@@ -49,12 +49,15 @@ start.addEventListener("click", startGame);
 function startGame() {
   if (p1signO.checked === false && p1signX.checked === false){
     alert("Players must select signs")
+    noNameNoSignNoStart()
   }
   else if(p2signO.checked === false && p2signX.checked === false){
     alert("Players must select signs")
+    noNameNoSignNoStart()
   }
   if (p1name.value === "" || p2name.value === ""){
     alert("Players must enter names")
+    noNameNoSignNoStart()
   }
   else{
     playerturn.textContent = p1name.value + "'s turn";
@@ -63,5 +66,3 @@ function startGame() {
     activateBoard()
   }
 }
-
-boardReset()
