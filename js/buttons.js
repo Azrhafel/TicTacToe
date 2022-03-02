@@ -31,13 +31,17 @@ function fullGameReset() {
   p1signO.checked = false;
   p2signX.checked = false;
   p2signO.checked = false;
+  p1signX.disabled = false;
+  p1signO.disabled = false;
+  p2signX.disabled = false;
+  p2signO.disabled = false;
   p1form.insertBefore(p1label, p1form.children[1]);
   p1form.insertBefore(p1name, p1form.children[2]);
   p2form.insertBefore(p2label, p2form.children[1]);
   p2form.insertBefore(p2name, p2form.children[2]);
   start.disabled = false;
   playerturn.textContent = "";
-  //boardReset()
+  boardReset()
 }
 
 start.addEventListener("click", startGame);
@@ -55,6 +59,9 @@ function startGame() {
   else{
     playerturn.textContent = p1name.value + "'s turn";
     start.disabled = true;
+    boardReset()
+    activateBoard()
   }
-  //boardReset()
 }
+
+boardReset()
