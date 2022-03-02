@@ -48,6 +48,7 @@ function cell1move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell1.removeEventListener("click", cell1move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont1.style.color = "red"
     cellcont1.textContent = p2signsel.value;
     startingBoard[0] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -67,6 +68,7 @@ function cell2move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell2.removeEventListener("click", cell2move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont2.style.color = "red"
     cellcont2.textContent = p2signsel.value;
     startingBoard[1] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -86,6 +88,7 @@ function cell3move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell3.removeEventListener("click", cell3move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont3.style.color = "red"
     cellcont3.textContent = p2signsel.value;
     startingBoard[2] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -105,6 +108,7 @@ function cell4move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell4.removeEventListener("click", cell4move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont4.style.color = "red"
     cellcont4.textContent = p2signsel.value;
     startingBoard[3] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -124,6 +128,7 @@ function cell5move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell5.removeEventListener("click", cell5move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont5.style.color = "red"
     cellcont5.textContent = p2signsel.value;
     startingBoard[4] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -143,6 +148,7 @@ function cell6move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell6.removeEventListener("click", cell6move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont6.style.color = "red"
     cellcont6.textContent = p2signsel.value;
     startingBoard[5] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -162,6 +168,7 @@ function cell7move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell7.removeEventListener("click", cell7move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont7.style.color = "red"
     cellcont7.textContent = p2signsel.value;
     startingBoard[6] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -181,6 +188,7 @@ function cell8move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell8.removeEventListener("click", cell8move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont8.style.color = "red"
     cellcont8.textContent = p2signsel.value;
     startingBoard[7] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
@@ -200,6 +208,7 @@ function cell9move() {
     playerturn.textContent = p2name.value + "'s turn";
     cell9.removeEventListener("click", cell9move);
   } else if (move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont9.style.color = "red"
     cellcont9.textContent = p2signsel.value;
     startingBoard[8] = p2signsel.value;
     playerturn.textContent = p1name.value + "'s turn";
