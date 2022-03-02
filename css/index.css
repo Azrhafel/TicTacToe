@@ -81,7 +81,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   text-shadow: 0 0 1px rgb(45, 15, 212), 0 0 2px rgba(45, 15, 212),
     0 0 4px rgba(45, 15, 212), 0 0 8px rgba(45, 15, 212),
     0 0 16px rgba(45, 15, 212);
@@ -96,7 +96,7 @@ button:hover {
 }
 
 .main {
-  padding-top: 2vh;
+  padding-top: 1vh;
   display: flex;
   justify-content: center;
   justify-content: space-around;
