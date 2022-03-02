@@ -1,31 +1,80 @@
-*{
+@font-face {
+  font-family: Cyberpunk;
+  src: url("../assets/Cyberpunk-Regular.ttf");
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-color: aqua;
+  background-image: url("https://i.pinimg.com/originals/df/66/1b/df661b213ee05573007418bcd5cca532.gif");
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.tic{
+.tic {
+  position: relative;
+  width: 100%;
   text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  font-family: Cyberpunk;
 }
 
-.gametitle{
+.gametitle {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
   font-size: 40px;
+  filter: blur(1px);
+  font-weight: 100;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1),
+    0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 1),
+    0 0 160px rgba(255, 255, 255, 1);
 }
 
-.buttons{
+.tic:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00adff;
+  z-index: 2;
+  mix-blend-mode: color;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.buttons {
   padding-top: 2vh;
   display: flex;
   justify-content: center;
   justify-content: space-around;
+  margin-top: 20px;
 }
 
 button {
-  background-color: gray; 
+  background-color: rgba(0, 0, 0, 0.8);
   border: none;
   color: white;
   padding: 5px 22px 5px 22px;
@@ -35,12 +84,12 @@ button {
   font-size: 16px;
 }
 
-button:hover{
-  background-color: aliceblue;
-  color: black;
+button:hover {
+  background-color: black;
+  color: red;
 }
 
-.main{
+.main {
   padding-top: 2vh;
   display: flex;
   justify-content: center;
@@ -48,61 +97,92 @@ button:hover{
   align-self: center;
 }
 
-.player1{
-  background-color: white;
+.player1 {
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: Cyberpunk;
   align-self: center;
   text-align: center;
   width: 50vh;
 }
 
-.player2{
-  background-color: white;
+.player2 {
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: Cyberpunk;
   align-self: center;
   text-align: center;
   width: 50vh;
 }
 
-.board{
+label,.playernum,.player1name, .player2name, .p1signselect, .p2signselect, .currturn,.content{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  color: yellow;
+  text-transform: uppercase;
+  font-size: 20px;
+  filter: blur(0.2px);
+  font-weight: 100;
+  text-shadow: 0 0 1px rgb(212, 15, 153), 0 0 2px rgba(212, 15, 153),
+    0 0 4px rgba(212, 15, 153), 0 0 8px rgba(212, 15, 153),
+    0 0 16px rgba(212, 15, 153);
+}
+
+
+.board {
   margin-top: 5vh;
   display: flex;
   width: 68vh;
   height: 68vh;
   flex-wrap: wrap;
   background-color: aquamarine;
-  font-size: 50px;
-
+  color: azure;
 }
 
-.cells{
-  border: 1px solid black;
+.cells {
+  border: 1px solid white;
   width: 22.5vh;
   height: 22.6vh;
   border-top: none;
   text-align: center;
+  font-family: Cyberpunk, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
-.cell1,.cell4,.cell7{
+.cell1,
+.cell4,
+.cell7 {
   border-left: none;
 }
 
-.cell2,.cell5,.cell8{
+.cell2,
+.cell5,
+.cell8 {
   border-left: none;
   border-right: none;
 }
 
-.cell3,.cell6,.cell9{
+.cell3,
+.cell6,
+.cell9 {
   border-right: none;
 }
 
-.cell7,.cell8,.cell9{
+.cell7,
+.cell8,
+.cell9 {
   border-bottom: none;
 }
 
-.content{
-  margin-top: 20px;
+.content {
+  font-size: 90px;
 }
 
-.currturn{
+.currturn {
   text-align: center;
   padding-top: 10px;
+  font-family: Cyberpunk, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

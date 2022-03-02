@@ -42,6 +42,7 @@ function fullGameReset() {
   start.disabled = false;
   playerturn.textContent = "";
   boardReset()
+  noNameNoSignNoStart()
 }
 
 start.addEventListener("click", startGame);

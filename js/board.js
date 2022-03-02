@@ -214,6 +214,8 @@ cell9.addEventListener("click", cell9move);
 //Board Reset
 function boardReset() {
   move = 1;
+  mainboard.style.backgroundColor = "rgba(255,255,255,0.2)"
+  mainboard.style.backgroundImage = "none"
   cellcont1.textContent = "";
   cellcont2.textContent = "";
   cellcont3.textContent = "";
@@ -395,7 +397,7 @@ function checkForWinner() {
   ) {
     Title.textContent = "Draw!";
     mainboard.style.backgroundImage =
-      "url('https://c.tenor.com/RUwFv2LxW_QAAAAM/the-wire-surprised.gif')";
+      "url('https://c.tenor.com/VUh2kalji7QAAAAd/man-shocked.gif')";
   }
 }
 
