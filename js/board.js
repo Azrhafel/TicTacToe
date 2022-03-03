@@ -47,6 +47,7 @@ var move9 = [];
 
 // Turns
 var move = 0;
+var currmove = 0;
 var maxmoves = 9;
 
 //Cell 1 Move
@@ -64,6 +65,7 @@ function cell1move() {
     cell1.removeEventListener("click", cell1move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -84,6 +86,7 @@ function cell2move() {
     cell2.removeEventListener("click", cell2move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -104,6 +107,7 @@ function cell3move() {
     cell3.removeEventListener("click", cell3move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -124,6 +128,7 @@ function cell4move() {
     cell4.removeEventListener("click", cell4move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -144,6 +149,7 @@ function cell5move() {
     cell5.removeEventListener("click", cell5move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -164,6 +170,7 @@ function cell6move() {
     cell6.removeEventListener("click", cell6move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -184,6 +191,7 @@ function cell7move() {
     cell7.removeEventListener("click", cell7move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -204,6 +212,7 @@ function cell8move() {
     cell8.removeEventListener("click", cell8move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -224,6 +233,7 @@ function cell9move() {
     cell9.removeEventListener("click", cell9move);
   }
   move += 1;
+  currmove += 1;
   checkForWinner();
 }
 
@@ -232,6 +242,7 @@ cell9.addEventListener("click", cell9move);
 //Board Reset
 function boardReset() {
   move = 0;
+  currmove = 0;
   cell1.style.backgroundImage = "none";
   cell2.style.backgroundImage = "none";
   cell3.style.backgroundImage = "none";
@@ -525,6 +536,8 @@ function checkForWinner() {
   preventFurtherChanges();
   prevAndNextAdd();
   saveMove();
+  console.log("Currmove: "+currmove);
+  console.log("Move: "+ move)
   if (move === 9 && Title.textContent !== `${p1lock.innerHTML} wins!`) {
     Title.textContent = "Draw!";
     mainboard.style.backgroundImage =
@@ -702,7 +715,9 @@ function previousMove() {
 prev.addEventListener("click", previousMove);
 
 function nextMove() {
-  move += 1;
+  if (move <= maxmoves) {
+    move += 1;
+  }
   if (move === 2) {
     cellcont1.textContent = move2[0][0];
     cellcont2.textContent = move2[0][1];
@@ -790,6 +805,8 @@ function nextMove() {
     cellcont7.textContent = move9[0][6];
     cellcont8.textContent = move9[0][7];
     cellcont9.textContent = move9[0][8];
+  }
+  if (move == currmove) {
     next.remove();
   }
   basebuttons.insertBefore(prev, basebuttons.children[1]);
