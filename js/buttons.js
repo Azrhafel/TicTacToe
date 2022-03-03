@@ -1,6 +1,7 @@
 // Variables
 
 // Buttons
+var basebuttons = document.querySelector(".buttons")
 var start = document.querySelector("#start");
 var prev = document.querySelector("#previous");
 var next = document.querySelector("#next");
@@ -43,6 +44,7 @@ function fullGameReset() {
   playerturn.textContent = "";
   boardReset()
   noNameNoSignNoStart()
+  prevAndNextRemove()
 }
 
 start.addEventListener("click", startGame);
@@ -65,5 +67,22 @@ function startGame() {
     start.disabled = true;
     boardReset()
     activateBoard()
+    prevAndNextRemove()
   }
 }
+
+function prevAndNextRemove(){
+  prev.remove()
+  next.remove()
+}
+
+function prevAndNextAdd(){
+  if (move === 1){
+    basebuttons.insertBefore(prev,basebuttons.children[1])
+  }
+  else if (move === 3){
+    basebuttons.insertBefore(next,basebuttons.children[2])
+  }
+}
+
+prevAndNextRemove()
