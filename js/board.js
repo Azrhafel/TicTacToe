@@ -53,6 +53,7 @@ var maxmoves = 9;
 //Cell 1 Move
 function cell1move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont1.style.color = "yellow";
     cellcont1.textContent = p1signsel.value;
     startingBoard[0] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -74,6 +75,7 @@ cell1.addEventListener("click", cell1move);
 //Cell 2 Move
 function cell2move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont2.style.color = "yellow";
     cellcont2.textContent = p1signsel.value;
     startingBoard[1] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -95,6 +97,7 @@ cell2.addEventListener("click", cell2move);
 //Cell 3 Move
 function cell3move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont3.style.color = "yellow";
     cellcont3.textContent = p1signsel.value;
     startingBoard[2] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -116,6 +119,7 @@ cell3.addEventListener("click", cell3move);
 //Cell 4 Move
 function cell4move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont4.style.color = "yellow";
     cellcont4.textContent = p1signsel.value;
     startingBoard[3] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -137,6 +141,7 @@ cell4.addEventListener("click", cell4move);
 //Cell 5 Move
 function cell5move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont5.style.color = "yellow";
     cellcont5.textContent = p1signsel.value;
     startingBoard[4] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -158,6 +163,7 @@ cell5.addEventListener("click", cell5move);
 //Cell 6 Move
 function cell6move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont6.style.color = "yellow";
     cellcont6.textContent = p1signsel.value;
     startingBoard[5] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -179,6 +185,7 @@ cell6.addEventListener("click", cell6move);
 //Cell 7 Move
 function cell7move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont7.style.color = "yellow";
     cellcont7.textContent = p1signsel.value;
     startingBoard[6] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -200,6 +207,7 @@ cell7.addEventListener("click", cell7move);
 //Cell 8 Move
 function cell8move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont8.style.color = "yellow";
     cellcont8.textContent = p1signsel.value;
     startingBoard[7] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -221,6 +229,7 @@ cell8.addEventListener("click", cell8move);
 //Cell 9 Move
 function cell9move() {
   if (move === 0 || move === 2 || move === 4 || move === 6 || move === 8) {
+    cellcont9.style.color = "yellow";
     cellcont9.textContent = p1signsel.value;
     startingBoard[8] = p1signsel.value;
     playerturn.textContent = p2name.value + "'s turn";
@@ -586,7 +595,6 @@ function noNameNoSignNoStart() {
   cell9.removeEventListener("click", cell9move);
 }
 
-// In progress
 function saveMove() {
   if (move === 1) {
     move1.push(startingBoard.slice());
