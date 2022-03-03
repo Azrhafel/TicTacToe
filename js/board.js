@@ -263,6 +263,15 @@ function boardReset() {
   cell7.removeEventListener("click", cell7move);
   cell8.removeEventListener("click", cell8move);
   cell9.removeEventListener("click", cell9move);
+  move1 = [];
+  move2 = [];
+  move3 = [];
+  move4 = [];
+  move5 = [];
+  move6 = [];
+  move7 = [];
+  move8 = [];
+  move9 = [];
 }
 boardReset();
 
@@ -597,6 +606,7 @@ function saveMove() {
 
 function previousMove() {
   move -= 1;
+  basebuttons.insertBefore(next, basebuttons.children[2]);
   if (move === 8) {
     cellcont1.textContent = move8[0][0];
     cellcont2.textContent = move8[0][1];
@@ -685,14 +695,104 @@ function previousMove() {
     cellcont7.textContent = move1[0][6];
     cellcont8.textContent = move1[0][7];
     cellcont9.textContent = move1[0][8];
-    prev.remove()
+    prev.remove();
   }
 }
 
 prev.addEventListener("click", previousMove);
 
-
-function nextMove(){
-  move +=1
-  
+function nextMove() {
+  move += 1;
+  if (move === 2) {
+    cellcont1.textContent = move2[0][0];
+    cellcont2.textContent = move2[0][1];
+    cellcont3.textContent = move2[0][2];
+    cellcont4.textContent = move2[0][3];
+    cellcont5.textContent = move2[0][4];
+    cellcont6.textContent = move2[0][5];
+    cellcont7.textContent = move2[0][6];
+    cellcont8.textContent = move2[0][7];
+    cellcont9.textContent = move2[0][8];
+  }
+  if (move === 3) {
+    cellcont1.textContent = move3[0][0];
+    cellcont2.textContent = move3[0][1];
+    cellcont3.textContent = move3[0][2];
+    cellcont4.textContent = move3[0][3];
+    cellcont5.textContent = move3[0][4];
+    cellcont6.textContent = move3[0][5];
+    cellcont7.textContent = move3[0][6];
+    cellcont8.textContent = move3[0][7];
+    cellcont9.textContent = move3[0][8];
+  }
+  if (move === 4) {
+    cellcont1.textContent = move4[0][0];
+    cellcont2.textContent = move4[0][1];
+    cellcont3.textContent = move4[0][2];
+    cellcont4.textContent = move4[0][3];
+    cellcont5.textContent = move4[0][4];
+    cellcont6.textContent = move4[0][5];
+    cellcont7.textContent = move4[0][6];
+    cellcont8.textContent = move4[0][7];
+    cellcont9.textContent = move4[0][8];
+  }
+  if (move === 5) {
+    cellcont1.textContent = move5[0][0];
+    cellcont2.textContent = move5[0][1];
+    cellcont3.textContent = move5[0][2];
+    cellcont4.textContent = move5[0][3];
+    cellcont5.textContent = move5[0][4];
+    cellcont6.textContent = move5[0][5];
+    cellcont7.textContent = move5[0][6];
+    cellcont8.textContent = move5[0][7];
+    cellcont9.textContent = move5[0][8];
+  }
+  if (move === 6) {
+    cellcont1.textContent = move6[0][0];
+    cellcont2.textContent = move6[0][1];
+    cellcont3.textContent = move6[0][2];
+    cellcont4.textContent = move6[0][3];
+    cellcont5.textContent = move6[0][4];
+    cellcont6.textContent = move6[0][5];
+    cellcont7.textContent = move6[0][6];
+    cellcont8.textContent = move6[0][7];
+    cellcont9.textContent = move6[0][8];
+  }
+  if (move === 7) {
+    cellcont1.textContent = move7[0][0];
+    cellcont2.textContent = move7[0][1];
+    cellcont3.textContent = move7[0][2];
+    cellcont4.textContent = move7[0][3];
+    cellcont5.textContent = move7[0][4];
+    cellcont6.textContent = move7[0][5];
+    cellcont7.textContent = move7[0][6];
+    cellcont8.textContent = move7[0][7];
+    cellcont9.textContent = move7[0][8];
+  }
+  if (move === 8) {
+    cellcont1.textContent = move8[0][0];
+    cellcont2.textContent = move8[0][1];
+    cellcont3.textContent = move8[0][2];
+    cellcont4.textContent = move8[0][3];
+    cellcont5.textContent = move8[0][4];
+    cellcont6.textContent = move8[0][5];
+    cellcont7.textContent = move8[0][6];
+    cellcont8.textContent = move8[0][7];
+    cellcont9.textContent = move8[0][8];
+  }
+  if (move === 9) {
+    cellcont1.textContent = move9[0][0];
+    cellcont2.textContent = move9[0][1];
+    cellcont3.textContent = move9[0][2];
+    cellcont4.textContent = move9[0][3];
+    cellcont5.textContent = move9[0][4];
+    cellcont6.textContent = move9[0][5];
+    cellcont7.textContent = move9[0][6];
+    cellcont8.textContent = move9[0][7];
+    cellcont9.textContent = move9[0][8];
+    next.remove();
+  }
+  basebuttons.insertBefore(prev, basebuttons.children[1]);
 }
+
+next.addEventListener("click", nextMove);
