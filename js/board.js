@@ -543,14 +543,17 @@ function checkForWinner() {
   checkForWinner7();
   checkForWinner8();
   preventFurtherChanges();
-  prevAndNextAdd();
   saveMove();
   console.log("Currmove: "+currmove);
   console.log("Move: "+ move)
   if (move === 9 && Title.textContent !== `${p1lock.innerHTML} wins!`) {
+    basebuttons.insertBefore(prev,basebuttons.children[1])
     Title.textContent = "Draw!";
     mainboard.style.backgroundImage =
       "url('https://c.tenor.com/VUh2kalji7QAAAAd/man-shocked.gif')";
+  }
+  if(Title.textContent === `${p1lock.innerHTML} wins!` || Title.textContent === `${p2lock.innerHTML} wins!`){
+    basebuttons.insertBefore(prev,basebuttons.children[1])
   }
 }
 

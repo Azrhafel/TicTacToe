@@ -76,10 +76,4 @@ function prevAndNextRemove(){
   next.remove()
 }
 
-function prevAndNextAdd(){
-  if (move === 2){
-    basebuttons.insertBefore(prev,basebuttons.children[1])
-  }
-}
-
 prevAndNextRemove()
