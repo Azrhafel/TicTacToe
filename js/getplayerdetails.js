@@ -20,6 +20,7 @@ function getP1Details(event) {
   p1lock.innerHTML = input;
   p1label.remove();
   p1name.remove();
+  releaseStart()
 }
 
 p1form.addEventListener("submit", getP1Details);
@@ -36,6 +37,7 @@ function getp1signselectX() {
   p2signX.disabled = true;
   p2signO.disabled = false;
   p1signsel.value = input
+  releaseStart()
 }
 
 p1signX.addEventListener("change", getp1signselectX);
@@ -50,6 +52,7 @@ function getp1signselectO() {
   p2signO.disabled = true;
   p2signX.disabled = false;
   p1signsel.value = input
+  releaseStart()
 }
 
 p1signO.addEventListener("change", getp1signselectO);
@@ -73,6 +76,7 @@ function getP2Details(event) {
   p2lock.innerHTML = input;
   p2label.remove();
   p2name.remove();
+  releaseStart()
 }
 
 p2form.addEventListener("submit", getP2Details);
@@ -89,6 +93,7 @@ function getp2signselectX() {
   p1signX.disabled = true;
   p1signO.disabled = false;
   p2signsel.value = input
+  releaseStart()
 }
 
 p2signX.addEventListener("change", getp2signselectX);
@@ -103,8 +108,16 @@ function getp2signselectO() {
   p1signX.disabled = false;
   p1signO.disabled = true;
   p2signsel.value = input
+  releaseStart()
 }
 
 p2signO.addEventListener("change", getp2signselectO);
 
-// If a sign is already selected, the same sign cannot be selected by other player.
+//Start button only released when conditions are met
+function releaseStart(){
+  if(p1lock.innerHTML != "" && p2lock.innerHTML !=""){
+    if(p1signO.disabled === true && p2signX.disabled === true || p1signX.disabled === true && p2signO.disabled === true){
+      startButtonAdd()
+    }
+  }
+}

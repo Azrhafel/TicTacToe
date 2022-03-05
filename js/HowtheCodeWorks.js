@@ -92,6 +92,14 @@ var p2lock = p2form.querySelector(".player2name");
 var p2signsel = p2form.querySelector(".p2signselect");
 
 
+//Gives the site visitor instructions before they can play the game
+mainPageAlert()
+
+function mainPageAlert(){
+  alert("Enter your names and select your signs to begin!")
+}
+
+
 // Upon opening the page, does this function
 boardReset();
 
@@ -141,6 +149,26 @@ function boardReset() {
 
 }
 
+// Removes the start and reset buttons
+function startAndResetRemove(){
+  start.remove()
+  reset.remove()
+}
+
+// Adds the start button
+function startButtonAdd(){
+  basebuttons.insertBefore(start,basebuttons.children[0])
+}
+
+//Start button only released when conditions are met
+function releaseStart(){
+  if(p1lock.innerHTML != "" && p2lock.innerHTML !=""){
+    if(p1signO.disabled === true && p2signX.disabled === true || p1signX.disabled === true && p2signO.disabled === true){
+      startButtonAdd()
+    }
+  }
+}
+
 // Gets the details of player 1 input field
 function getP1Details(event) {
   event.preventDefault();
@@ -148,6 +176,7 @@ function getP1Details(event) {
   p1lock.innerHTML = input;
   p1label.remove();
   p1name.remove();
+  releaseStart()
 }
 
 p1form.addEventListener("submit", getP1Details);
@@ -164,7 +193,10 @@ function getp1signselectX() {
   p2signX.disabled = true;
   p2signO.disabled = false;
   p1signsel.value = input
+  releaseStart()
 }
+
+p1signX.addEventListener("change", getp1signselectX);
 
 function getp1signselectO() {
   var input = p1signO.value;
@@ -176,11 +208,10 @@ function getp1signselectO() {
   p2signO.disabled = true;
   p2signX.disabled = false;
   p1signsel.value = input
+  releaseStart()
 }
 
 p1signO.addEventListener("change", getp1signselectO);
-
-p1signX.addEventListener("change", getp1signselectX);
 
 
 // Gets the details of player 2 input field
@@ -191,6 +222,7 @@ function getP2Details(event) {
   p2lock.innerHTML = input;
   p2label.remove();
   p2name.remove();
+  releaseStart()
 }
 
 p2form.addEventListener("submit", getP2Details);
@@ -207,6 +239,7 @@ function getp2signselectX() {
   p1signX.disabled = true;
   p1signO.disabled = false;
   p2signsel.value = input
+  releaseStart()
 }
 
 p2signX.addEventListener("change", getp2signselectX);
@@ -221,6 +254,7 @@ function getp2signselectO() {
   p1signX.disabled = false;
   p1signO.disabled = true;
   p2signsel.value = input
+  releaseStart()
 }
 
 p2signO.addEventListener("change", getp2signselectO);
@@ -228,15 +262,12 @@ p2signO.addEventListener("change", getp2signselectO);
 // Starts the game
 function startGame() {
   if (p1signO.checked === false && p1signX.checked === false){
-    alert("Players must select signs")
     noNameNoSignNoStart()
   }
   else if(p2signO.checked === false && p2signX.checked === false){
-    alert("Players must select signs")
     noNameNoSignNoStart()
   }
   if (p1name.value === "" || p2name.value === ""){
-    alert("Players must enter names")
     noNameNoSignNoStart()
   }
   else{
@@ -419,7 +450,7 @@ function saveMove() {
 
 function previousMove() {
   move -= 1;
-  basebuttons.insertBefore(next, basebuttons.children[2]);
+  basebuttons.insertBefore(next, basebuttons.children[1]);
   if (move === 9) {
     cellcont1.textContent = move8[0][0];
     cellcont2.textContent = move8[0][1];
@@ -430,6 +461,7 @@ function previousMove() {
     cellcont7.textContent = move8[0][6];
     cellcont8.textContent = move8[0][7];
     cellcont9.textContent = move8[0][8];
+    movehistlist.removeChild(movehistlistitem9)
   }
   if (move === 8) {
     cellcont1.textContent = move7[0][0];
@@ -441,6 +473,7 @@ function previousMove() {
     cellcont7.textContent = move7[0][6];
     cellcont8.textContent = move7[0][7];
     cellcont9.textContent = move7[0][8];
+    movehistlist.removeChild(movehistlistitem8)
   }
   if (move === 7) {
     cellcont1.textContent = move6[0][0];
@@ -452,6 +485,7 @@ function previousMove() {
     cellcont7.textContent = move6[0][6];
     cellcont8.textContent = move6[0][7];
     cellcont9.textContent = move6[0][8];
+    movehistlist.removeChild(movehistlistitem7)
   }
 
   if (move === 6) {
@@ -464,6 +498,7 @@ function previousMove() {
     cellcont7.textContent = move5[0][6];
     cellcont8.textContent = move5[0][7];
     cellcont9.textContent = move5[0][8];
+    movehistlist.removeChild(movehistlistitem6)
   }
   if (move === 5) {
     cellcont1.textContent = move4[0][0];
@@ -475,6 +510,7 @@ function previousMove() {
     cellcont7.textContent = move4[0][6];
     cellcont8.textContent = move4[0][7];
     cellcont9.textContent = move4[0][8];
+    movehistlist.removeChild(movehistlistitem5)
   }
   if (move === 4) {
     cellcont1.textContent = move3[0][0];
@@ -486,6 +522,7 @@ function previousMove() {
     cellcont7.textContent = move3[0][6];
     cellcont8.textContent = move3[0][7];
     cellcont9.textContent = move3[0][8];
+    movehistlist.removeChild(movehistlistitem4)
   }
   if (move === 3) {
     cellcont1.textContent = move2[0][0];
@@ -497,6 +534,7 @@ function previousMove() {
     cellcont7.textContent = move2[0][6];
     cellcont8.textContent = move2[0][7];
     cellcont9.textContent = move2[0][8];
+    movehistlist.removeChild(movehistlistitem3)
   }
   if (move === 2) {
     cellcont1.textContent = move1[0][0];
@@ -508,6 +546,7 @@ function previousMove() {
     cellcont7.textContent = move1[0][6];
     cellcont8.textContent = move1[0][7];
     cellcont9.textContent = move1[0][8];
+    movehistlist.removeChild(movehistlistitem2)
     prev.remove();
   }
 }
@@ -530,6 +569,7 @@ function nextMove() {
     cellcont7.textContent = move2[0][6];
     cellcont8.textContent = move2[0][7];
     cellcont9.textContent = move2[0][8];
+    movehistlist.appendChild(movehistlistitem2)
   }
   if (move === 4) {
     cellcont1.textContent = move3[0][0];
@@ -541,6 +581,7 @@ function nextMove() {
     cellcont7.textContent = move3[0][6];
     cellcont8.textContent = move3[0][7];
     cellcont9.textContent = move3[0][8];
+    movehistlist.appendChild(movehistlistitem3)
   }
   if (move === 5) {
     cellcont1.textContent = move4[0][0];
@@ -552,6 +593,7 @@ function nextMove() {
     cellcont7.textContent = move4[0][6];
     cellcont8.textContent = move4[0][7];
     cellcont9.textContent = move4[0][8];
+    movehistlist.appendChild(movehistlistitem4)
   }
   if (move === 6) {
     cellcont1.textContent = move5[0][0];
@@ -563,6 +605,7 @@ function nextMove() {
     cellcont7.textContent = move5[0][6];
     cellcont8.textContent = move5[0][7];
     cellcont9.textContent = move5[0][8];
+    movehistlist.appendChild(movehistlistitem5)
   }
   if (move === 7) {
     cellcont1.textContent = move6[0][0];
@@ -574,6 +617,7 @@ function nextMove() {
     cellcont7.textContent = move6[0][6];
     cellcont8.textContent = move6[0][7];
     cellcont9.textContent = move6[0][8];
+    movehistlist.appendChild(movehistlistitem6)
   }
   if (move === 8) {
     cellcont1.textContent = move7[0][0];
@@ -585,6 +629,7 @@ function nextMove() {
     cellcont7.textContent = move7[0][6];
     cellcont8.textContent = move7[0][7];
     cellcont9.textContent = move7[0][8];
+    movehistlist.appendChild(movehistlistitem7)
   }
   if (move === 9) {
     cellcont1.textContent = move8[0][0];
@@ -596,6 +641,7 @@ function nextMove() {
     cellcont7.textContent = move8[0][6];
     cellcont8.textContent = move8[0][7];
     cellcont9.textContent = move8[0][8];
+    movehistlist.appendChild(movehistlistitem8)
   }
   if (move === 10) {
     cellcont1.textContent = move9[0][0];
@@ -607,14 +653,53 @@ function nextMove() {
     cellcont7.textContent = move9[0][6];
     cellcont8.textContent = move9[0][7];
     cellcont9.textContent = move9[0][8];
+    movehistlist.appendChild(movehistlistitem9)
   }
   if (move == currmove) {
     next.remove();
   }
-  basebuttons.insertBefore(prev, basebuttons.children[1]);
+  basebuttons.insertBefore(prev, basebuttons.children[0]);
 }
 
-next.addEventListener("click", nextMove);
+next.addEventListener("click", nextMove)
 
 
-
+// Adds move history to board
+function postMoveHist(){
+  if (move === 1){
+    movehistlistitem1.textContent = `Turn ${move}: ${position} ${p1signsel.value}`
+    movehistlist.appendChild(movehistlistitem1)
+  }
+  if(move === 2){
+    movehistlistitem2.textContent = `Turn ${move}: ${position} ${p2signsel.value}`
+    movehistlist.appendChild(movehistlistitem2)
+  }
+  if (move === 3){
+    movehistlistitem3.textContent = `Turn ${move}: ${position} ${p1signsel.value}`
+    movehistlist.appendChild(movehistlistitem3)
+  }
+  if (move === 4){
+    movehistlistitem4.textContent = `Turn ${move}: ${position} ${p2signsel.value}`
+    movehistlist.appendChild(movehistlistitem4)
+  }
+  if (move === 5){
+    movehistlistitem5.textContent = `Turn ${move}: ${position} ${p1signsel.value}`
+    movehistlist.appendChild(movehistlistitem5)
+  }
+  if (move === 6){
+    movehistlistitem6.textContent = `Turn ${move}: ${position} ${p2signsel.value}`
+    movehistlist.appendChild(movehistlistitem6)
+  }
+  if (move === 7){
+    movehistlistitem7.textContent = `Turn ${move}: ${position} ${p1signsel.value}`
+    movehistlist.appendChild(movehistlistitem7)
+  }
+  if (move === 8){
+    movehistlistitem8.textContent = `Turn ${move}: ${position} ${p2signsel.value}`
+    movehistlist.appendChild(movehistlistitem8)
+  }
+  if (move === 9){
+    movehistlistitem9.textContent = `Turn ${move}: ${position} ${p1signsel.value}`
+    movehistlist.appendChild(movehistlistitem9)
+  }
+}

@@ -328,6 +328,7 @@ function boardReset() {
   move7 = [];
   move8 = [];
   move9 = [];
+  startAndResetRemove()
 }
 boardReset();
 
@@ -581,7 +582,8 @@ function checkForWinner() {
   preventFurtherChanges();
   saveMove();
   if (move === 10 && Title.textContent !== `${p1lock.innerHTML} wins!`) {
-    basebuttons.insertBefore(prev,basebuttons.children[1])
+    basebuttons.insertBefore(reset,basebuttons.children[3])
+    basebuttons.insertBefore(prev,basebuttons.children[0])
     playerturn.textContent = "Match Over!"
     Title.textContent = "Draw!";
     mainboard.style.backgroundImage =
@@ -589,7 +591,8 @@ function checkForWinner() {
   }
   if(Title.textContent === `${p1lock.innerHTML} wins!` || Title.textContent === `${p2lock.innerHTML} wins!`){
     playerturn.textContent = "Match Over!"
-    basebuttons.insertBefore(prev,basebuttons.children[1])
+    basebuttons.insertBefore(prev,basebuttons.children[0])
+    basebuttons.insertBefore(reset,basebuttons.children[3])
   }
   if(Title.textContent === `${p1lock.innerHTML} wins!`){
     player1score += 1
@@ -682,7 +685,7 @@ function saveMove() {
 
 function previousMove() {
   move -= 1;
-  basebuttons.insertBefore(next, basebuttons.children[2]);
+  basebuttons.insertBefore(next, basebuttons.children[1]);
   if (move === 9) {
     cellcont1.textContent = move8[0][0];
     cellcont2.textContent = move8[0][1];
@@ -693,6 +696,7 @@ function previousMove() {
     cellcont7.textContent = move8[0][6];
     cellcont8.textContent = move8[0][7];
     cellcont9.textContent = move8[0][8];
+    movehistlist.removeChild(movehistlistitem9)
   }
   if (move === 8) {
     cellcont1.textContent = move7[0][0];
@@ -704,6 +708,7 @@ function previousMove() {
     cellcont7.textContent = move7[0][6];
     cellcont8.textContent = move7[0][7];
     cellcont9.textContent = move7[0][8];
+    movehistlist.removeChild(movehistlistitem8)
   }
   if (move === 7) {
     cellcont1.textContent = move6[0][0];
@@ -715,6 +720,7 @@ function previousMove() {
     cellcont7.textContent = move6[0][6];
     cellcont8.textContent = move6[0][7];
     cellcont9.textContent = move6[0][8];
+    movehistlist.removeChild(movehistlistitem7)
   }
 
   if (move === 6) {
@@ -727,6 +733,7 @@ function previousMove() {
     cellcont7.textContent = move5[0][6];
     cellcont8.textContent = move5[0][7];
     cellcont9.textContent = move5[0][8];
+    movehistlist.removeChild(movehistlistitem6)
   }
   if (move === 5) {
     cellcont1.textContent = move4[0][0];
@@ -738,6 +745,7 @@ function previousMove() {
     cellcont7.textContent = move4[0][6];
     cellcont8.textContent = move4[0][7];
     cellcont9.textContent = move4[0][8];
+    movehistlist.removeChild(movehistlistitem5)
   }
   if (move === 4) {
     cellcont1.textContent = move3[0][0];
@@ -749,6 +757,7 @@ function previousMove() {
     cellcont7.textContent = move3[0][6];
     cellcont8.textContent = move3[0][7];
     cellcont9.textContent = move3[0][8];
+    movehistlist.removeChild(movehistlistitem4)
   }
   if (move === 3) {
     cellcont1.textContent = move2[0][0];
@@ -760,6 +769,7 @@ function previousMove() {
     cellcont7.textContent = move2[0][6];
     cellcont8.textContent = move2[0][7];
     cellcont9.textContent = move2[0][8];
+    movehistlist.removeChild(movehistlistitem3)
   }
   if (move === 2) {
     cellcont1.textContent = move1[0][0];
@@ -771,6 +781,7 @@ function previousMove() {
     cellcont7.textContent = move1[0][6];
     cellcont8.textContent = move1[0][7];
     cellcont9.textContent = move1[0][8];
+    movehistlist.removeChild(movehistlistitem2)
     prev.remove();
   }
 }
@@ -793,6 +804,7 @@ function nextMove() {
     cellcont7.textContent = move2[0][6];
     cellcont8.textContent = move2[0][7];
     cellcont9.textContent = move2[0][8];
+    movehistlist.appendChild(movehistlistitem2)
   }
   if (move === 4) {
     cellcont1.textContent = move3[0][0];
@@ -804,6 +816,7 @@ function nextMove() {
     cellcont7.textContent = move3[0][6];
     cellcont8.textContent = move3[0][7];
     cellcont9.textContent = move3[0][8];
+    movehistlist.appendChild(movehistlistitem3)
   }
   if (move === 5) {
     cellcont1.textContent = move4[0][0];
@@ -815,6 +828,7 @@ function nextMove() {
     cellcont7.textContent = move4[0][6];
     cellcont8.textContent = move4[0][7];
     cellcont9.textContent = move4[0][8];
+    movehistlist.appendChild(movehistlistitem4)
   }
   if (move === 6) {
     cellcont1.textContent = move5[0][0];
@@ -826,6 +840,7 @@ function nextMove() {
     cellcont7.textContent = move5[0][6];
     cellcont8.textContent = move5[0][7];
     cellcont9.textContent = move5[0][8];
+    movehistlist.appendChild(movehistlistitem5)
   }
   if (move === 7) {
     cellcont1.textContent = move6[0][0];
@@ -837,6 +852,7 @@ function nextMove() {
     cellcont7.textContent = move6[0][6];
     cellcont8.textContent = move6[0][7];
     cellcont9.textContent = move6[0][8];
+    movehistlist.appendChild(movehistlistitem6)
   }
   if (move === 8) {
     cellcont1.textContent = move7[0][0];
@@ -848,6 +864,7 @@ function nextMove() {
     cellcont7.textContent = move7[0][6];
     cellcont8.textContent = move7[0][7];
     cellcont9.textContent = move7[0][8];
+    movehistlist.appendChild(movehistlistitem7)
   }
   if (move === 9) {
     cellcont1.textContent = move8[0][0];
@@ -859,6 +876,7 @@ function nextMove() {
     cellcont7.textContent = move8[0][6];
     cellcont8.textContent = move8[0][7];
     cellcont9.textContent = move8[0][8];
+    movehistlist.appendChild(movehistlistitem8)
   }
   if (move === 10) {
     cellcont1.textContent = move9[0][0];
@@ -870,11 +888,12 @@ function nextMove() {
     cellcont7.textContent = move9[0][6];
     cellcont8.textContent = move9[0][7];
     cellcont9.textContent = move9[0][8];
+    movehistlist.appendChild(movehistlistitem9)
   }
   if (move == currmove) {
     next.remove();
   }
-  basebuttons.insertBefore(prev, basebuttons.children[1]);
+  basebuttons.insertBefore(prev, basebuttons.children[0]);
 }
 
 next.addEventListener("click", nextMove);

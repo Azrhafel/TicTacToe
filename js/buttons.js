@@ -77,3 +77,17 @@ function prevAndNextRemove(){
 }
 
 prevAndNextRemove()
+
+function startAndResetRemove(){
+  start.remove()
+  reset.remove()
+}
+
+function mainPageAlert(){
+  alert("Enter your names and select your signs to begin!")
+}
+mainPageAlert()
+
+function startButtonAdd(){
+  basebuttons.insertBefore(start,basebuttons.children[0])
+}
