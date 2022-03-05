@@ -121,7 +121,14 @@ button:hover {
   width: 50vh;
 }
 
-label,.playernum,.player1name, .player2name, .p1signselect, .p2signselect, .currturn,.content{
+label,
+.playernum,
+.player1name,
+.player2name,
+.p1signselect,
+.p2signselect,
+.currturn,
+.content {
   position: relative;
   margin: 0;
   padding: 0;
@@ -136,7 +143,6 @@ label,.playernum,.player1name, .player2name, .p1signselect, .p2signselect, .curr
     0 0 4px rgba(212, 15, 153), 0 0 8px rgba(212, 15, 153),
     0 0 16px rgba(212, 15, 153);
 }
-
 
 .board {
   margin-top: 5vh;
@@ -190,5 +196,51 @@ label,.playernum,.player1name, .player2name, .p1signselect, .p2signselect, .curr
 .currturn {
   text-align: center;
   padding-top: 10px;
-  font-family: Cyberpunk, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Cyberpunk, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}
+
+.movehist {
+  margin-top: 5vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 200px;
+}
+
+.movehistlist{
+  list-style: none;
+}
+
+li {
+  margin-top: 0;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: yellow;
+  text-transform: uppercase;
+  font-size: 15px;
+  filter: blur(0.2px);
+  font-weight: 100;
+  text-shadow: 0 0 1px rgb(212, 15, 153), 0 0 2px rgba(212, 15, 153),
+    0 0 4px rgba(212, 15, 153), 0 0 8px rgba(212, 15, 153),
+    0 0 16px rgba(212, 15, 153);
+}
+
+h2 {
+  position: relative;
+  margin: 0;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: yellow;
+  text-transform: uppercase;
+  font-size: 15px;
+  filter: blur(0.2px);
+  font-weight: 100;
+  text-shadow: 0 0 1px rgb(212, 15, 153), 0 0 2px rgba(212, 15, 153),
+    0 0 4px rgba(212, 15, 153), 0 0 8px rgba(212, 15, 153),
+    0 0 16px rgba(212, 15, 153);
+}
+
+.secret {
+  display: none;
 }

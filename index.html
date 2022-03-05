@@ -38,9 +38,12 @@
         <label for="player1signO">O</label>
         <input type="radio" class="player1signO" name="player1sign" value="O">
         <h2 class="p1signselect"></h2>
+        <h2 class="player1score"></h2>
       </form>
       </div>
-      
+      <div class="movehist">
+        <ul class="movehistlist"></ul>
+    </div>
   <!--Main Game Board-->
       <div class="board">
         <div class="cells cell1"><h2 class="content1 content"></h2></div>
@@ -68,6 +71,7 @@
         <label for="player2signO">O</label>
         <input type="radio" class="player2signO" id="player2signO" name="player2sign" value="O">
         <h2 class="p2signselect"></h2>
+        <h2 class="player2score"></h2>
       </form>
       </div>
     </div>
@@ -75,5 +79,6 @@
     <script src="/js/getplayerdetails.js" defer></script>
     <script src="/js/buttons.js" defer></script>
     <script src="/js/board.js" defer></script>
+    <script src="/js/movehist.js" defer></script>
   </body>
 </html>
